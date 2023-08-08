@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+vidaxltest.txt
+suppliers/temp/*
+__pycache__/*
+suppliers/__pycache__/*
+testcodes/__pycache__/*
+testcodes/credentials.yml
+testcodes/sp_config.xxxx
+config.py
+
+

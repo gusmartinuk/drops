@@ -1,0 +1,9 @@
+SP_API_CREDENTIALS = {
+    'refresh_token': 'Atzr|IwEBIARJvXpoeqHQ6cwZR4YJCiKlHRoOG_RPiZzF_q0aSQf0dGDpV_0AYZHMDP0jdx7_WTfS4XK2ILqyTcecEH6pDH55iypEjOZMOp0pWrQMt8x-g-AKaSmAtIJvd7AWcnwkOKliWJgX9K2fD6bQTmPmQHraEGGHYLxrDGyeRsNOpBDpLxLuXfq68pPzwP5EifoKsuitdvcht4r6_zXN-J-wR2rLkbhPpKLPBXw6A7inafa1yYYJ1qWsZyP2s3agDEffqlvQEpCBDhHcsqoCODnCxiCP6xZTJNeDlUQe2TKnQgyKZ-BQhI7C1BAUF9HoiG2lfp8',
+    'lwa_app_id': 'amzn1.application-oa2-client.5dd985db6b6d477d9c3a8abd14436195',
+    'lwa_client_secret': 'amzn1.oa2-cs.v1.c55d03be414d4a7ca958a2d6dd265d6048d72aa9fb287aa23395e787bcb16cba',
+    'aws_access_key': 'AKIAUGK332KYRREN2CXA',
+    'aws_secret_key': '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',
+    'role_arn': 'arn:aws:iam::288492343985:role/selleraccessrole',
+    'selling_partner_api_endpoint': 'https://sellingpartnerapi-eu.amazon.com'
+}

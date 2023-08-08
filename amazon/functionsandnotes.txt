@@ -1,0 +1,60 @@
+from config import *
+
+# Get your items' details
+def get_my_items(seller_sku_list):
+    try:
+        catalog = Catalog()
+        item_details = []
+        for sku in seller_sku_list:
+            response = catalog.get_item_details(sku, marketplace_id=marketplace_id)
+            item_details.append(response.payload)
+        return item_details
+    except SellingApiException as e:
+        print(f"Error getting item details: {e}")
+        return None
+
+
+def get_listings_offer(sku):
+    objproducts=Products(marketplace=Marketplaces.GB,
+                     credentials=credentials,
+                     account='default')
+    #xproducts=objproducts.get_product_pricing_for_asins(asin_list, MarketplaceId="A1F83G8C2ARO7P")
+    xproduct=objproducts.get_listings_offer(sku, "New","Consumer")
+    print(xproduct)
+    exit()
+
+def get_competitors_prices(asin_list):
+    objproducts=Products(marketplace=Marketplaces.GB,
+                     credentials=credentials,
+                     account='default')
+    #xproducts=objproducts.get_product_pricing_for_asins(asin_list, MarketplaceId="A1F83G8C2ARO7P")
+    xproducts=objproducts.get_competitive_pricing_for_asins(asin_list, MarketplaceId="A1F83G8C2ARO7P")
+    print(xproducts)
+    exit()
+    try:
+        pricing = ProductPricing()
+        competitor_prices = []
+        for asin in asin_list:
+            response = pricing.get_competitive_pricing(asin, marketplace_id=marketplace_id)
+            competitor_prices.append(response.payload)
+        return competitor_prices
+    except SellingApiException as e:
+        print(f"Error getting competitor prices: {e}")
+        return None
+
+# Update price and stock
+def update_price_and_stock(seller_sku, price, quantity):
+    try:
+        listings = ListingsItems()
+        response = listings.put_listings_item(
+            seller_sku,
+            {
+                "price": str(price),
+                "quantity": str(quantity)
+            },
+            marketplace_id=marketplace_id
+        )
+        return response.payload
+    except SellingApiException as e:
+        print(f"Error updating price and stock: {e}")
+        return None

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<h1>Product Search</h1>
+
+<div class="row">
+  <div class="col-xl-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">		
+    <div class="card mb-3">
+      <div class="card-body">
+        <form id="productform" name="productform" action='' onsubmit="return false;">	
+          <label for="search">Search: </label>
+          <input type="text" class="col-xl-3 col-sm-3 col-md-3 col-lg-2 col-xl-2" id="search" name="search" class="form-control" placeholder="Search products..."> 								
+          
+          <label  style="margin-left:20px" for="category">Category: </label>
+          <input type="text" class="col-xl-3 col-sm-3 col-md-3 col-lg-2 col-xl-2" id="category" name="category" class="form-control" placeholder="Category"> 								
+
+          <label  style="margin-left:20px" for="filter">Filter: </label>
+          <select id="filter" name="filter">
+            <option value="">All</option>
+            <option value="100">Published</option>
+            <option value="1">Basket</option>
+            <option value="0">Not Published</option>
+          </select>									
+          <br>
+          <label  style="margin-left:20px" for="minstock">Min Stock: </label>
+          <input type="number" class="col-xl-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" id="minstock" name="minstock" value="10" class="form-control"> 															
+          <label  style="margin-left:20px" for="minprice">Min Price: </label>
+          <input type="money" class="col-xl-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" id="minprice" name="minprice" value="10" class="form-control"> 															
+          <label  style="margin-left:20px" for="maxprice">Max Price: </label>
+          <input type="money" class="col-xl-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" id="maxprice" name="maxprice" value="10000" class="form-control"> 															
+          <input type="text" id="currentpage" name="currentpage" value="1">
+        </form>				
+        <div class="alert alert-primary" role="alert" id="records">
+        </div>
+        <div class="table-responsive">
+          <table style="width:98%" id="products" class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>SKU</th>
+              <th>Title</th>
+              <th>Stock</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="results"></tbody>
+          </table>
+          <nav>
+            <ul class="pagination" id="pagination"></ul>
+          </nav>							
+          <div id="debug" class="debug">								
+          </div>	
+            
+          <div id="log"  class="alert alert-info" role="alert" id="log">								
+          </div>
+        </div>		
+      </div>	
+    </div>	
+  </div>						
+</div>
+
+
+{% endblock %}

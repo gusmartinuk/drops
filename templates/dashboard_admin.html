@@ -1,0 +1,12 @@
+{% extends 'base_admin.html' %}
+
+{% block title %}Admin Panel{% endblock %}
+
+{% block content %}
+<h1>AdminDashboard</h1>
+{% if message!='' %}
+  <div class="alert alert-info">
+    {{message|safe}}
+  </div>    
+{% endif %}        
+{% endblock %}
